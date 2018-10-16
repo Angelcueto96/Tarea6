@@ -1,0 +1,19 @@
+#mainNavBar{
+    background-color: #7abdbd;
+    .navbar-nav {
+        #logo{
+            max-width: 50px;
+        }
+        text-align: center;
+        h2{
+            color:#e2ddcd;
+        }
+        float:none;
+        margin:0 auto;
+        display: flex;
+        text-align: center;
+        .nav-item img{
+            width: 100%;;
+        }
+    }
+}
