@@ -1,6 +1,6 @@
 <div class= "container">
     <h2>Help me By Compleating this survey</h2>
-    <form class="form-group" >
+    <form class="form-group" (submit)="navigateToResults()" >
         <h4>Which is your favorite iphone model</h4>
         <select class="custom-select my-1 mr-sm-2" id="question1" (change)="onChange($event.target.value)" >
             <option selected>Choose One</option>

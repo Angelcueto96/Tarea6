@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IphoneDataService } from '../iphone-data.service';
 import { FormControl } from '@angular/forms';
+import {Router, NavigationExtras} from '@angular/router';
 
 @Component({
     selector: 'app-survey',
@@ -16,12 +17,11 @@ export class SurveyComponent implements OnInit {
     question2Validation = false;
     question3Validation = false;
     question4Validation = false;
-
     finalQuestion = 0;
     userForthSelection = 0;
 
 
-    constructor(private service:IphoneDataService) {
+    constructor(private service:IphoneDataService, public router: Router) {
         this.data = this.service.getData();
     }
 
@@ -72,6 +72,21 @@ export class SurveyComponent implements OnInit {
         this.userForthSelection = newValue;
         let submitButton = document.getElementById('submitButton').style.visibility = "visible";
         
+    }
+     navigateToResults() {
+        
+        let navigationExtras: NavigationExtras = {
+            queryParams: {
+                "data": this.data,
+                "userFirstSelection": this.userFirstSelection,
+                "userSecondSelection": this.userSecondSelection,
+                "userThirdSelection": this.userThirdSelection,
+                "userForthSelectio": this.userForthSelection
+                
+            }
+        };
+
+        this.router.navigate( ["results"] , navigationExtras);
     }
 
 
