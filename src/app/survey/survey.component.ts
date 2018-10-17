@@ -80,22 +80,23 @@ export class SurveyComponent implements OnInit {
     }
      navigateToResults() {
          
-         if(this.userSecondSelection == 0){
+         if(this.userSecondSelection == 1){
              this.answer2 = "yes";
          }else{
              this.answer2 = "no";
          }
          
-         if(this.userThirdSelection == 0){
+         if(this.userThirdSelection == 1){
              this.answer3 = "yes";
          }else{
              this.answer3 = "no";
          }
-         if(this.userForthSelection == 0){
+         if(this.userForthSelection == 1){
              this.answer4 = "yes";
          }else{
              this.answer4 = "no";
          }
+         console.log(this.answer2);
         
         let navigationExtras: NavigationExtras = {
             queryParams: {
