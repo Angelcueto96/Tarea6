@@ -1,7 +1,16 @@
 .container{
+    text-align: center;
     background-color: #7abdbd;
     
     #question2, #question3, #question4, #submitButton{
         visibility: hidden
+    }
+    h4{
+        color: #e2ddcd;
+    }
+    button{
+        background-color: #e2ddcd;
+        color: black;
+        border-color: black;
     }
 }
