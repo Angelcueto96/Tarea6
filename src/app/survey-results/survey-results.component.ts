@@ -8,23 +8,29 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class SurveyResultsComponent implements OnInit {
 
-    data;
-    userFirstSelection = 0; 
-    userSecondSelection = 0;
-    userThirdSelection = 0;
-    userForthSelection = 0;
+    model;
+    q2;
+    q3;
+    q4;
+    answer2;
+    answer3;
+    answer4;
+   
     
     constructor(private route: ActivatedRoute) {
         this.route.queryParams.subscribe(params => {
-            console.log(params)
-            this.data = params["data"];
-            this.userFirstSelection = params["usersFirstSelection"];
-            this.userSecondSelection = params["userSecondSelection"];
-            this.userThirdSelection = params["userThirdSelection"];
-            this.userFirstSelection = params["userForthSelection"];
             
+            this.model = params["model"];
+            this.q2 = params["q2"];
+            this.q3 = params["q3"];
+            this.q4 = params["q4"];
+            this.answer2 = params["answer2"];
+            this.answer3 = params["answer3"];
+            this.answer4 = params["answer4"];
+     
             
         });
+        
 
     }
 

@@ -11,6 +11,7 @@ import {Router, NavigationExtras} from '@angular/router';
 export class SurveyComponent implements OnInit {
 
     data;
+    modelName;
     userFirstSelection = 0; 
     userSecondSelection = 0;
     userThirdSelection = 0;
@@ -19,10 +20,14 @@ export class SurveyComponent implements OnInit {
     question4Validation = false;
     finalQuestion = 0;
     userForthSelection = 0;
+     answer2;
+    answer3;
+    answer4;
 
 
     constructor(private service:IphoneDataService, public router: Router) {
         this.data = this.service.getData();
+
     }
 
 
@@ -74,14 +79,33 @@ export class SurveyComponent implements OnInit {
         
     }
      navigateToResults() {
+         
+         if(this.userSecondSelection == 0){
+             this.answer2 = "yes";
+         }else{
+             this.answer2 = "no";
+         }
+         
+         if(this.userThirdSelection == 0){
+             this.answer3 = "yes";
+         }else{
+             this.answer3 = "no";
+         }
+         if(this.userForthSelection == 0){
+             this.answer4 = "yes";
+         }else{
+             this.answer4 = "no";
+         }
         
         let navigationExtras: NavigationExtras = {
             queryParams: {
-                "data": this.data,
-                "userFirstSelection": this.userFirstSelection,
-                "userSecondSelection": this.userSecondSelection,
-                "userThirdSelection": this.userThirdSelection,
-                "userForthSelectio": this.userForthSelection
+                "model": this.data.models[this.userFirstSelection].name,
+                "q2": this.data.models[this.userFirstSelection].q1,
+                "q3": this.data.models[this.userFirstSelection].q2,
+                "q4": this.data.models[this.userFirstSelection].secondQuestions[this.finalQuestion].question,             
+                "answer2": this.answer2,
+                "answer3": this.answer3,
+                "answer4": this.answer4
                 
             }
         };
