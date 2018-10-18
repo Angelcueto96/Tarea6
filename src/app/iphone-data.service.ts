@@ -38,7 +38,7 @@ export class IphoneDataService {
                 "q2":"Do you think the XS Max is to big?",
                 "secondQuestions":[
                     {
-                        "question":"Do you consider it the best iPhone ever ?",
+                        "question":"Do you consider it is the best iPhone ever ?",
                         "description":"true-true"
                     },
                     {   
@@ -50,7 +50,7 @@ export class IphoneDataService {
                         "description":"false-true"
                     },
                     {
-                        "question":"Is this model really your favorite",
+                        "question":"Is this model really your favorite?",
                         "description":"false-false"
                     }
                 ]
